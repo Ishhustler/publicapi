@@ -32,9 +32,12 @@
         <option value="4">4</option>
       </select>
       <button type="submit" class="form-submit">Go</button>
+
+     
     </form>
     <section id="cards" class="cards">
-      <article class="card-item">
+      <% if (locals.data){ %>
+       <article class="card-item">
         <h2 class="card-activity">
           <!-- Show Activity -->
           <%= data.activity %>
@@ -50,13 +53,15 @@
             <span class="card-number"></span>
           </span>
         </div>
-      </article>
+       </article>
+      <% } %>
+      <%if (locals.error){  %>
 
-
-      <div id="tag-error" class="tag-error">
+       <div id="tag-error" class="tag-error">
+        <%= error %>
         <!-- Show any errors that were sent from the backend -->
-      </div>
-
+       </div>
+       <% } %>
     </section>
   </div>
 
